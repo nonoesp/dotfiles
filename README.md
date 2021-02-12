@@ -130,3 +130,18 @@ defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName "C
 - → Cron jobs - Backup iA Writer docs
 - → 
 - → 
+
+```
+## Manual customizations
+
+###############
+## Voice Memos
+###############
+
+Audio Quality = Lossless
+Location-based naming = false
+```
+
+## Laravel Sail
+
+- https://laravel.com/docs/8.x/sail#installing-sail-into-existing-applications
