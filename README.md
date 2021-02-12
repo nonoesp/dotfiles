@@ -1,3 +1,9 @@
+# dotfiles
+
+Nono's approach to the crazy world of dotfiles.
+
+Temporarily, below are the original notes from [holman](https://github.com/holman/dotfiles)'s dotfiles.
+
 # holman does dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.
@@ -85,3 +91,42 @@ weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
 dotfiles were an easy way to get into bash customization, and then to jump ship
 to zsh a bit later. A decent amount of the code in these dotfiles stem or are
 inspired from Ryan's original project.
+
+## Nono's notes
+
+### Two ways to set a dictionary
+
+```bash
+# Set screen saver to "Computer Name"
+defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName "Computer Name" path "/System/Library/Frameworks/ScreenSaver.framework/PlugIns/Computer Name.appex" type 0
+
+# Set screen saver to "Computer Name"
+#defaults write ${HOME}/Library/Preferences/ByHost/com.apple.screensaver.plist moduleDict '{moduleName = "Computer Name";path = "/System/Library/Frameworks/ScreenSaver.framework/PlugIns/Computer Name.appex";type = 0;}'
+```
+
+- [Change private SSH key password](https://sleeplessbeastie.eu/2016/04/04/how-to-change-ssh-private-key-passphrase/)
+
+## TODO
+
+- [ ] aws configure?
+- [ ] Look at
+
+  - https://github.com/mathiasbynens/dotfiles/blob/main/.aliases
+  - https://github.com/mathiasbynens/dotfiles/blob/main/.functions
+  - https://github.com/mathiasbynens/dotfiles/blob/main/.gitconfig
+  - https://github.com/mathiasbynens/dotfiles/blob/main/.gitignore
+
+- Create repos folders
+- Clone web repositories?
+- Finalize Brewfile
+- Install composer
+- Valet
+- Laravel aliases from https://github.com/freekmurze/dotfiles
+- → https://github.com/freekmurze/dotfiles/blob/master/macos/set-defaults.sh
+- → https://github.com/lra/mackup
+- → https://github.com/freekmurze/dotfiles/blob/master/installscript
+- → https://github.com/freekmurze/dotfiles/blob/master/shell/.aliases
+- Node packages (convert to list) typescript
+- → Cron jobs - Backup iA Writer docs
+- → 
+- → 
