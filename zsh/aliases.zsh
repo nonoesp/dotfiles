@@ -1,3 +1,17 @@
+# Helpers
 alias reload!='. ~/.zshrc'
 
-alias cls='clear' # Good 'ol Clear Screen command
+# macOS defaults
+alias dr='defaults read $*'
+alias dw='defaults write $*'
+
+# > From github.com/freekmurze/dotfiles
+
+# IP addresses
+alias ip="curl https://diagnostic.opendns.com/myip ; echo"
+
+# Fast open
+alias o="open ."
+
+# List all files colorized in long format
+alias l="ls -laF"
