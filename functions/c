@@ -13,4 +13,17 @@
 #
 # ...to quickly jump into holman/boom, for example.
 
-cd "$PROJECTS/$1"
+if [ ! -z "$1" ] && [ -s "$GOPATH/src/github.com/$1" ]; then
+  cd "$GOPATH/src/github.com/$1"
+elif [ ! -z "$1" ] && [ -s "$PROJECTS/$1" ]; then
+ cd "$PROJECTS/$1"
+elif [ ! -z "$1" ] && [ -s "$LIBRARY/$1" ]; then
+ cd "$LIBRARY/$1"
+elif [ ! -z "$1" ] && [ -s "$INBOX/$1" ]; then
+ cd "$INBOX/$1"
+elif [ ! -z "$1" ] && [ -s "$WEB/$1" ]; then
+ cd "$WEB/$1"
+else
+  cd "$PROJECTS/$1"
+fi
+#cd "$PROJECTS/$1"
