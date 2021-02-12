@@ -16,3 +16,11 @@ then
     sudo npm install pm2 -g
   fi
 fi
+
+if test ! $(which http-server)
+then
+  if test $(which npm)
+  then
+    sudo npm install http-server -g
+  fi
+fi
