@@ -25,3 +25,11 @@ duti -s com.microsoft.VSCode php all
 
 # Markdown
 duti -s pro.writer.mac md all
+
+###############################################################################
+# Photoshop                                                                   #
+###############################################################################
+
+duti -s com.adobe.Photoshop arw all
+
+# com.apple.Preview
