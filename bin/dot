@@ -7,6 +7,12 @@
 
 set -e
 
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until this script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 parentDirectory="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
 dotfilesDirectory="$(cd "$( dirname "$parentDirectory" )" && pwd -P)"
 
@@ -40,9 +46,6 @@ done
 
 export ZSH=$HOME/.dotfiles
 
-# Set macOS defaults
-$ZSH/macos/set-defaults.sh
-
 # Install homebrew
 $ZSH/homebrew/install.sh 2>&1
 
@@ -50,6 +53,22 @@ $ZSH/homebrew/install.sh 2>&1
 echo "› brew update"
 brew update
 
+# Install homebrew packages
+echo "› brew bundle --file $ZSH/Brewfile"
+brew bundle --file $ZSH/Brewfile
+
+# Cleanup homebrew
+echo "› brew cleanup"
+brew cleanup 2>&1
+
 # Install software
 echo "› $ZSH/script/install"
 $ZSH/script/install
+
+# Set macOS defaults
+echo "› macOS » set defaults"
+$ZSH/macos/set-defaults.sh
+
+# Remove default apps from Dock
+echo "› macOS » Remove Dock apps"
+$ZSH/macos/remove-apps-from-dock.sh
