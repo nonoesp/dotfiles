@@ -30,6 +30,7 @@ cask "hiddenbar"
 cask "authy"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+cask "discord"
 
 # TODO
 # brew install imagemagick --with-webp
