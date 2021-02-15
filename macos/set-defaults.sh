@@ -583,37 +583,37 @@ defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName "C
 defaults write pro.writer.mac "Editor Focus Mode" -bool true
 
 # Set default file extension to Markdown (.md)
-defaults write pro.writer.mac "Document Path Extension" md
+defaults write pro.writer.mac "Document Path Extension" -string md
 
 # Pin folders to top
-defaults write pro.writer.mac "Library Pin Folders To Top" 1
+defaults write pro.writer.mac "Library Pin Folders To Top" -bool true
 
 # Hide text excerpts
-defaults write pro.writer.mac "Library Show Text Snippet" 0
+defaults write pro.writer.mac "Library Show Text Snippet" -bool false
 
 # Hide library filter bar
-defaults write pro.writer.mac "Library Shows Search Bar" 0
+defaults write pro.writer.mac "Library Shows Search Bar" -bool false
 
 # Hide library sort bar
-defaults write pro.writer.mac "Library Shows Sort Bar" 0
+defaults write pro.writer.mac "Library Shows Sort Bar" -bool false
 
 # Hide organizer hashtags
-defaults write pro.writer.mac "Organizer Shows Hashtags" 0
+defaults write pro.writer.mac "Organizer Shows Hashtags" -bool false
 
 # Hide organizer smart folders
-defaults write pro.writer.mac "Organizer Shows Smart Folders" 0
+defaults write pro.writer.mac "Organizer Shows Smart Folders" -bool false
 
 # Disable centered headings
-defaults write pro.writer.mac "Preview Center Headings" 0
+defaults write pro.writer.mac "Preview Center Headings" -bool false
 
 # Set print author
-defaults write pro.writer.mac "Print Author" "Nono Mart\\U00ednez Alonso";
+defaults write pro.writer.mac "Print Author" -string "Nono Mart\\U00ednez Alonso";
 
 # Enable print title page
-defaults write pro.writer.mac "Print Include Title Page" 1
+defaults write pro.writer.mac "Print Include Title Page" -bool true
 
 # Hide favorites
-defaults write pro.writer.mac "Favorites Options" 0
+defaults write pro.writer.mac "Favorites Options" -bool false
 
 # "Library Sort Order" = {length = 493, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 00000169 };
 
