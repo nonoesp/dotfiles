@@ -29,7 +29,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6E6F6E6F"
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=%01
+sudo nvram StartupMute=%01
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
 # defaults write com.apple.universalaccess reduceTransparency -bool true
@@ -583,37 +584,37 @@ defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName "C
 defaults write pro.writer.mac "Editor Focus Mode" -bool true
 
 # Set default file extension to Markdown (.md)
-defaults write pro.writer.mac "Document Path Extension" md
+defaults write pro.writer.mac "Document Path Extension" -string md
 
 # Pin folders to top
-defaults write pro.writer.mac "Library Pin Folders To Top" 1
+defaults write pro.writer.mac "Library Pin Folders To Top" -bool true
 
 # Hide text excerpts
-defaults write pro.writer.mac "Library Show Text Snippet" 0
+defaults write pro.writer.mac "Library Show Text Snippet" -bool false
 
 # Hide library filter bar
-defaults write pro.writer.mac "Library Shows Search Bar" 0
+defaults write pro.writer.mac "Library Shows Search Bar" -bool false
 
 # Hide library sort bar
-defaults write pro.writer.mac "Library Shows Sort Bar" 0
+defaults write pro.writer.mac "Library Shows Sort Bar" -bool false
 
 # Hide organizer hashtags
-defaults write pro.writer.mac "Organizer Shows Hashtags" 0
+defaults write pro.writer.mac "Organizer Shows Hashtags" -bool false
 
 # Hide organizer smart folders
-defaults write pro.writer.mac "Organizer Shows Smart Folders" 0
+defaults write pro.writer.mac "Organizer Shows Smart Folders" -bool false
 
 # Disable centered headings
-defaults write pro.writer.mac "Preview Center Headings" 0
+defaults write pro.writer.mac "Preview Center Headings" -bool false
 
 # Set print author
-defaults write pro.writer.mac "Print Author" "Nono Mart\\U00ednez Alonso";
+defaults write pro.writer.mac "Print Author" -string "Nono Mart\\U00ednez Alonso";
 
 # Enable print title page
-defaults write pro.writer.mac "Print Include Title Page" 1
+defaults write pro.writer.mac "Print Include Title Page" -bool true
 
 # Hide favorites
-defaults write pro.writer.mac "Favorites Options" 0
+defaults write pro.writer.mac "Favorites Options" -bool false
 
 # "Library Sort Order" = {length = 493, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 00000169 };
 
@@ -644,10 +645,10 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 ###############################################################################
 
 # Set first day of week to Monday
-defaults write com.apple.iCal "first day of week" 1
+defaults write com.apple.iCal "first day of week" -int 1
 
 # Enable time zone support
-defaults write com.apple.iCal "TimeZone support enabled" 1
+defaults write com.apple.iCal "TimeZone support enabled" -bool true
 
 ###############################################################################
 # TODO       				                                                  #
