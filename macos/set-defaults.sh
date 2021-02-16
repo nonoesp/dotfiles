@@ -29,7 +29,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6E6F6E6F"
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=%01
+sudo nvram StartupMute=%01
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
 # defaults write com.apple.universalaccess reduceTransparency -bool true
@@ -644,10 +645,10 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 ###############################################################################
 
 # Set first day of week to Monday
-defaults write com.apple.iCal "first day of week" 1
+defaults write com.apple.iCal "first day of week" -int 1
 
 # Enable time zone support
-defaults write com.apple.iCal "TimeZone support enabled" 1
+defaults write com.apple.iCal "TimeZone support enabled" -bool true
 
 ###############################################################################
 # TODO       				                                                  #
