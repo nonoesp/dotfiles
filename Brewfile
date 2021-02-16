@@ -23,7 +23,7 @@ brew "ssh-copy-id"
 brew "mackup"
 brew "imagemagick"
 brew "jq"
-brew "pandoc"
+# brew "pandoc"
 # Mac App Store command-line interface
 # brew "mas"
 
@@ -56,6 +56,7 @@ cask "zoom"
 cask "whatsapp"
 cask "netron"
 cask "basictex"
+cask "calibre"
 
 # cask "inkscape"
 # cask "background-music"
