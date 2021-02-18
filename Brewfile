@@ -23,6 +23,7 @@ brew "ssh-copy-id"
 brew "mackup"
 brew "imagemagick"
 brew "jq"
+brew "composer"
 # brew "pandoc"
 # Mac App Store command-line interface
 # brew "mas"
