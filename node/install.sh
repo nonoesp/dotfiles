@@ -1,26 +1,21 @@
 # TODO: loop through list or use package.json?
 echo "› npm"
 
-if test ! $(which spoof)
-then
-  if test $(which npm)
+if test $(which npm)
   then
-    sudo npm install spoof -g
-  fi
-fi
+  # Install npm packages globally
+  for package in \
+    "spoof" \
+    "pm2" \
+    "ts-node" \
+    "typescript" \
+    "http-server" \
+      ; do
+      echo "  ${package}.."
 
-if test ! $(which pm2)
-then
-  if test $(which npm)
-  then
-    sudo npm install pm2 -g
-  fi
-fi
-
-if test ! $(which http-server)
-then
-  if test $(which npm)
-  then
-    sudo npm install http-server -g
-  fi
+      if test ! $(which "${package}")
+      then
+          npm install ${package} -g &> /dev/null
+      fi
+  done
 fi
