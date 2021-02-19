@@ -15,7 +15,7 @@ duti -s com.microsoft.VSCode csv all
 # JSON
 duti -s com.microsoft.VSCode json all
 # HTML
-duti -s com.microsoft.VSCode public.html all
+# duti -s com.microsoft.VSCode html all
 # PHP
 duti -s com.microsoft.VSCode php all
 
@@ -31,5 +31,15 @@ duti -s pro.writer.mac md all
 ###############################################################################
 
 duti -s com.adobe.Photoshop arw all
+
+###############################################################################
+# QuickTime                                                                   #
+###############################################################################
+
+duti -s com.apple.QuickTimePlayerX mp4 all
+duti -s com.apple.QuickTimePlayerX mp3 all
+duti -s com.apple.QuickTimePlayerX aiff all
+duti -s com.apple.QuickTimePlayerX ogg all
+duti -s com.apple.QuickTimePlayerX mov all
 
 # com.apple.Preview
