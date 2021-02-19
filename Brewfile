@@ -27,6 +27,7 @@ brew "composer"
 # brew "pandoc"
 # Mac App Store command-line interface
 # brew "mas"
+brew "xpdf"
 
 # Minimal Conda installer specific to conda-forge comparable to Miniconda
 cask "anaconda" 
