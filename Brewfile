@@ -23,7 +23,13 @@ brew "ssh-copy-id"
 brew "mackup"
 brew "imagemagick"
 brew "jq"
+# Web development
 brew "composer"
+brew "php"
+brew "dnsmasq"
+brew "nginx"
+brew "mysql"
+brew "phpmyadmin"
 # brew "pandoc"
 # Mac App Store command-line interface
 # brew "mas"

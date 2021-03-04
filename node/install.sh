@@ -1,4 +1,3 @@
-# TODO: loop through list or use package.json?
 echo "› npm"
 
 if test $(which npm)
