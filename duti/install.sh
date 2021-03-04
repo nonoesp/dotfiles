@@ -18,6 +18,8 @@ duti -s com.microsoft.VSCode json all
 # duti -s com.microsoft.VSCode html all
 # PHP
 duti -s com.microsoft.VSCode php all
+# LOG
+duti -s com.microsoft.VSCode log all
 
 ###############################################################################
 # iA Writer                                                                   #

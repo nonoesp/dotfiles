@@ -15,3 +15,12 @@ alias o="open ."
 
 # List all files colorized in long format
 alias l="ls -laF"
+
+##########################################
+# Nono					 #
+##########################################
+
+alias expensed="nano ~/Library/Mobile\ Documents/27N4MQEA55\~pro\~writer/Documents/—02_Expensed.md"
+
+# Web shortcuts
+alias gmail="open https://gmail.com"
