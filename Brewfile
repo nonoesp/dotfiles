@@ -15,6 +15,7 @@ brew "node"
 brew "youtube-dl"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+brew "asciinema"
 brew "awscli"
 brew "glow"
 brew "dockutil"
