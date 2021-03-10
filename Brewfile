@@ -68,6 +68,7 @@ cask "whatsapp"
 cask "netron"
 cask "basictex"
 cask "calibre"
+cask "postman"
 
 # cask "inkscape"
 # cask "background-music"
