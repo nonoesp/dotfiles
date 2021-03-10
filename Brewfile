@@ -35,6 +35,8 @@ brew "phpmyadmin"
 # Mac App Store command-line interface
 # brew "mas"
 brew "xpdf"
+# brew "swift" # comes with Xcode
+# brew "pngcheck"
 
 # Minimal Conda installer specific to conda-forge comparable to Miniconda
 cask "anaconda" 
