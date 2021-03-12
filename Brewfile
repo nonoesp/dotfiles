@@ -79,6 +79,7 @@ cask "netron"
 cask "basictex"
 cask "calibre"
 cask "postman"
+cask "forecast"
 
 # cask "inkscape"
 # cask "background-music"
