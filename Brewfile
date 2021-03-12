@@ -3,6 +3,8 @@ cask_args appdir: '/Applications'
 tap "homebrew/bundle"
 tap "homebrew/core"
 
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Search tool like grep, but optimized for programmers
 brew "ack"
 # Select default apps for documents and URL schemes on macOS
@@ -23,7 +25,11 @@ brew "wget"
 brew "ssh-copy-id"
 brew "mackup"
 brew "imagemagick"
+# Development
 brew "jq"
+brew "vault"
+brew "curl"
+brew "jupyterlab"
 # Web development
 brew "composer"
 brew "php"
@@ -31,10 +37,14 @@ brew "dnsmasq"
 brew "nginx"
 brew "mysql"
 brew "phpmyadmin"
+# Tools
+brew "tesseract"
 # brew "pandoc"
 # Mac App Store command-line interface
 # brew "mas"
 brew "xpdf"
+brew "tree"
+brew "rename"
 # brew "swift" # comes with Xcode
 # brew "pngcheck"
 
