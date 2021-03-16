@@ -45,6 +45,7 @@ brew "tesseract"
 brew "xpdf"
 brew "tree"
 brew "rename"
+brew "figlet"
 # brew "swift" # comes with Xcode
 # brew "pngcheck"
 
@@ -80,6 +81,7 @@ cask "basictex"
 cask "calibre"
 cask "postman"
 cask "forecast"
+cask "processing"
 
 # cask "inkscape"
 # cask "background-music"
