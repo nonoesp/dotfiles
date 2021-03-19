@@ -2,6 +2,7 @@
 #
 # Smart cd.
 # Overrides cd to enter directories of files as well.
+# https://stackoverflow.com/a/36957743/2636350
 
 function cd() {
     if [ $# -eq 0 ] ; then
