@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Smart cd.
+# Overrides cd to enter directories of files as well.
+
+function cd() {
+    if [ $# -eq 0 ] ; then
+        # no arguments
+        builtin cd
+    elif [ -d $1 ] ; then
+        # argument is a directory
+        builtin cd "$1"
+    else
+        # argument is not a directory
+        builtin cd "$(dirname $1)"
+    fi
+}
