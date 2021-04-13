@@ -6,6 +6,8 @@ echo "› duti"
 # Visual Studio Code                                                          #
 ###############################################################################
 
+# TXT
+duti -s com.microsoft.VSCode txt all
 # Bash
 duti -s com.microsoft.VSCode sh all
 # XML
@@ -14,6 +16,9 @@ duti -s com.microsoft.VSCode xml all
 duti -s com.microsoft.VSCode csv all
 # JSON
 duti -s com.microsoft.VSCode json all
+# YAML
+duti -s com.microsoft.VSCode yaml all
+duti -s com.microsoft.VSCode yml all
 # HTML
 # duti -s com.microsoft.VSCode html all
 # PHP

@@ -25,3 +25,4 @@ alias expensed="nano ~/Library/Mobile\ Documents/27N4MQEA55\~pro\~writer/Documen
 # Web shortcuts
 alias gmail="open https://gmail.com"
 alias youtube="open https://youtube.com/nonomartinezalonso"
+alias upload="open https://youtube.com/upload"
