@@ -48,6 +48,7 @@ brew "rename"
 brew "figlet"
 # brew "swift" # comes with Xcode
 # brew "pngcheck"
+brew "figlet"
 
 # Minimal Conda installer specific to conda-forge comparable to Miniconda
 cask "anaconda" 

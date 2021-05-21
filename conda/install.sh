@@ -17,10 +17,10 @@ then
     echo "conda::Darwin"
 
     # Anaconda
-    arch -x86_64 /bin/bash /opt/homebrew/Caskroom/anaconda/2020.11/Anaconda3-2020.11-MacOSX-x86_64.sh
+    # arch -x86_64 /bin/bash /opt/homebrew/Caskroom/anaconda/2020.11/Anaconda3-2020.11-MacOSX-x86_64.sh
 
     # Initialize to add path to .zshrc
-    arch -x86_64 $HOME/anaconda3/bin/conda init "$(basename "${SHELL}")"
+    # arch -x86_64 $HOME/anaconda3/bin/conda init "$(basename "${SHELL}")"
 
     # Avoid conda from activating on startup
     conda config --set auto_activate_base false
