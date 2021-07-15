@@ -6,6 +6,7 @@ alias dr='defaults read $*'
 alias dw='defaults write $*'
 
 # > From github.com/freekmurze/dotfiles
+alias a="php artisan"
 
 # IP addresses
 alias ip="curl https://diagnostic.opendns.com/myip ; echo"
