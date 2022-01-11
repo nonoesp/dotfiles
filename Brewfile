@@ -49,6 +49,7 @@ brew "figlet"
 # brew "swift" # comes with Xcode
 # brew "pngcheck"
 brew "figlet"
+brew "asciicast2gif"
 
 # Minimal Conda installer specific to conda-forge comparable to Miniconda
 cask "anaconda" 
