@@ -2,6 +2,8 @@ echo "› npm"
 
 if test $(which npm)
   then
+  # Hide packages are looking for fund message
+  npm config set fund false
   # Install npm packages globally
   for package in \
     "spoof" \
