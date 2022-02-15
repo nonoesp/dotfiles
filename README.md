@@ -128,7 +128,7 @@ defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName "C
 - → https://github.com/freekmurze/dotfiles/blob/master/shell/.aliases
 - Node packages (convert to list) typescript
 - → Cron jobs - Backup iA Writer docs
-- → 
+- → Cron - Expensed
 - → 
 
 ```

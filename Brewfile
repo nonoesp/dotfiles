@@ -50,6 +50,7 @@ brew "figlet"
 # brew "pngcheck"
 brew "figlet"
 brew "asciicast2gif"
+brew "p7zip"
 
 # Minimal Conda installer specific to conda-forge comparable to Miniconda
 cask "anaconda" 
