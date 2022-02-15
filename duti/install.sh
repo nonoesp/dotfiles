@@ -32,6 +32,8 @@ duti -s com.microsoft.VSCode yml all
 duti -s com.microsoft.VSCode php all
 # LOG
 duti -s com.microsoft.VSCode log all
+# Makefile
+duti -s com.microsoft.VSCode Makefile all
 
 ###############################################################################
 # iA Writer                                                                   #
