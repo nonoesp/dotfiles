@@ -362,7 +362,7 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Don’t group windows by application in Mission Control
 # (i.e. use the old Exposé behavior instead)
-defaults write com.apple.dock expose-group-by-app -bool false
+defaults write com.apple.dock expose-group-by-app -bool true
 
 # Disable Dashboard
 # defaults write com.apple.dashboard mcx-disabled -bool true
@@ -375,6 +375,7 @@ defaults write com.apple.dock expose-group-by-app -bool false
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
+
 # Set animation when hiding/showing the Dock to half a second
 defaults write com.apple.dock autohide-time-modifier -float 0.75
 
