@@ -14,7 +14,7 @@ brew "ffmpeg"
 # Platform built on V8 to build network applications
 brew "node"
 # Download YouTube videos from the command-line
-brew "youtube-dl"
+brew "youtube-dlp"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 brew "asciinema"
