@@ -13,8 +13,8 @@
 #
 # ...to quickly jump into holman/boom, for example.
 
-if [ ! -z "$1" ] && [ -s "$GOPATH/src/github.com/$1" ]; then
-  cd "$GOPATH/src/github.com/$1"
+if [ ! -z "$1" ] && [ -s "$GOPATH/src/github.com/nonoesp/$1" ]; then
+  cd "$GOPATH/src/github.com/nonoesp/$1"
 elif [ ! -z "$1" ] && [ -s "$PROJECTS/$1" ]; then
  cd "$PROJECTS/$1"
 elif [ ! -z "$1" ] && [ -s "$LIBRARY/$1" ]; then
@@ -28,4 +28,3 @@ elif [ ! -z "$1" ] && [ -s "$NONOESP/$1" ]; then
 else
   cd "$PROJECTS/$1"
 fi
-#cd "$PROJECTS/$1"

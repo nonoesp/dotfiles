@@ -3,7 +3,7 @@ _files -W $PROJECTS -/
 _files -W $LIBRARY -/
 _files -W $INBOX -/
 _files -W $WEB -/
-_files -W $GOPATH/src/github.com -/
+_files -W $GOPATH/src/github.com/nonoesp -/
 _files -W $NONOESP -/
 
 # See further documentation in `functions/c`.
