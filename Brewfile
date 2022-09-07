@@ -27,6 +27,8 @@ cask "loopback"             # (Loopback) Cable-free audio router
 cask "obs"                  # (OBS) Open-source software for live streaming and screen recording
 cask "zoom"                 # (Zoom) Video communication and virtual meeting platform
 cask "spotify"              # (Spotify) Music streaming service
+cask "exodus"               # (Exodus) Desktop wallet for cryptocurrency assets
+cask "brave-browser"        # (Brave) Web browser focusing on privacy
 cask "discord"              # (Discord) Voice and text chat software
 cask "remarkable"           # (Remarkable) View, Screen Share, organize, import, and download files to a reMarkable device
 cask "grammarly"            # (Grammarly) Utility to fix grammar errors and style issues in text
@@ -40,7 +42,6 @@ cask "postman"              # (Postman) Collaboration platform for API developme
 cask "forecast"             # (Forecast) Podcast MP3 encoder with chapters
 cask "processing"           # (Processing) Flexible software sketchbook and a language for learning how to code
 cask "authy"                # (Authy Desktop) Two-factor authentication software
-cask "brave-browser"        # (Brave) Web browser focusing on privacy
 cask "calibre"              # (calibre) E-books management software
 cask "skype"                # (Skype) Video chat, voice call and instant messaging application
 cask "slack"                # (Slack) Team communication and collaboration software
