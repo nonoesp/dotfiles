@@ -8,7 +8,7 @@
 
 echo "› ssh"
 
-KEY_PATH=~/.ssh/id_rsa
+KEY_PATH=~/.ssh/id_ed25519
 
 if ! test -f "$KEY_PATH"; then
 
@@ -18,20 +18,20 @@ if ! test -f "$KEY_PATH"; then
 		read -p "  Enter your e-mail: " SSH_email
 		echo ""
 		echo "  [SSH] Creating SSH key"
-		SSH-keygen -f $KEY_PATH -t rsa -b 4096 -C $SSH_email
+		SSH-keygen -f $KEY_PATH -t ed25519 -b 4096 -C $SSH_email
+		echo ""
+
+		echo "  [SSH] Adding SSH key to SSH-agent"
+		eval "$(SSH-agent -s)"
+		SSH-add $KEY_PATH
+		echo ""
+
+		echo "  [SSH] Copying SSH key to clipboard"
+		pbcopy < "$KEY_PATH.pub"
+
+		echo "  [SSH] Done"
+		echo ""
 	fi
-	echo ""
-
-	echo "  [SSH] Adding SSH key to SSH-agent"
-	eval "$(SSH-agent -s)"
-	SSH-add $KEY_PATH
-	echo ""
-
-	echo "  [SSH] Copying SSH key to pasteboard"
-	pbcopy < "$KEY_PATH.pub"
-
-	echo "  [SSH] Done"
-	echo ""
 
 else
 
