@@ -53,6 +53,7 @@ cask "logitech-camera-settings" # (Logitech Camera Settings) Provides access to 
 
 # cask "inkscape"           # (Inkscape) Vector graphics editor
 # cask "telegram"           # (Telegram for macOS) Messaging app with a focus on speed and security
+# cask "mendeley"           # (Mendeley) Research management tool
 
 #  ██████╗  ██╗       ██╗
 # ██╔════╝  ██║       ██║
