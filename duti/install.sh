@@ -54,6 +54,7 @@ duti -s com.adobe.Photoshop arw all
 
 duti -s com.apple.QuickTimePlayerX mp4 all
 duti -s com.apple.QuickTimePlayerX m4v all
+duti -s com.apple.QuickTimePlayerX m4a all
 duti -s com.apple.QuickTimePlayerX mp3 all
 duti -s com.apple.QuickTimePlayerX wav all
 duti -s com.apple.QuickTimePlayerX aiff all
