@@ -108,3 +108,6 @@ brew "pandoc"           # Swiss-army knife of markup format conversion
 
 # cask "google-cloud-sdk"   # (Google Cloud SDK) Set of tools to manage resources and applications hosted on Google Cloud
 # cask "background-music"   # (Background Music) Audio utility
+
+# brew tap aws/tap
+# brew "aws-sam-cli"        # CLI tool to build, test, debug, and deploy Serverless applications using AWS Lambda
