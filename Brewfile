@@ -21,6 +21,7 @@ cask "toggl-track"          # (Toggl Track) Time tracker
 cask "lulu"                 # (LuLu) Open-source firewall to block unknown outgoing connections
 cask "hiddenbar"            # (Hidden Bar) Utility to hide menu bar items
 cask "elgato-stream-deck"   # (Elgato Stream Deck) Assign keys, and then decorate and label them
+cask "adobe-creative-cloud" # (Adobe Creative Cloud) Collection of apps and services for photography, design, video, web, and UX
 cask "notion"               # (Notion) App to write, plan, collaborate, and get organized
 cask "whatsapp"             # (WhatsApp) Desktop client for WhatsApp
 cask "audio-hijack"         # (Audio Hijack) Records audio from any application
