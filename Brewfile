@@ -49,6 +49,7 @@ cask "skype"                # (Skype) Video chat, voice call and instant messagi
 cask "slack"                # (Slack) Team communication and collaboration software
 brew "handbrake"            # (HandBrake) Open-source video transcoder available for Linux, Mac, and Windows
 brew "docker"               # (Docker) Pack, ship and run any application as a lightweight container
+cask "rode-central"         # (Rode Central) Configure RØDE device settings, features, functions, and firmware
 
 tap "homebrew/cask-drivers"
 cask "logitech-camera-settings" # (Logitech Camera Settings) Provides access to camera controls
