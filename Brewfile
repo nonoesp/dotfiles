@@ -88,7 +88,7 @@ brew "mackup"           # Keep your Mac's application settings in sync
 brew "jq"               # Lightweight and flexible command-line JSON processor
 brew "vault"            # Secures, stores, and tightly controls access to secrets
 brew "curl"             # Get a file from an HTTP, HTTPS or FTP server
-cask "anaconda"         # (Continuum Analytics Anaconda) Distribution of the Python and R programming languages for scientific computing
+cask "miniconda"        # (Continuum Analytics Miniconda) Minimal installer for conda
 brew "jupyterlab"       # Interactive environments for writing and running code
 
 brew "composer"         # Dependency Manager for PHP
