@@ -10,9 +10,11 @@ function title() {
   case $TERM in
   screen)
     print -Pn "\ek$a:$3\e\\" # screen title (in ^A")
+    # print -Pn "\ek:\e\\" # screen title (in ^A")
     ;;
   xterm*|rxvt)
-    print -Pn "\e]2;$2\a" # plain xterm title ($3 for pwd)
+    # print -Pn "\e]2;$2\a" # plain xterm title ($3 for pwd)
+    print -Pn "\e]2;youtube.com/@NonoMartinezAlonso\a" # plain xterm title ($3 for pwd)
     ;;
   esac
 }
