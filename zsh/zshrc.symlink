@@ -8,6 +8,7 @@ export ZSH=$HOME/.dotfiles
 export INBOX=~/Dropbox/0_Inbox
 export PROJECTS=~/Dropbox/1_Projects
 export LIBRARY=~/Dropbox/2_Library
+export SETTINGS=~/Dropbox/0_Inbox/settings
 export WEB=~/repos/web
 export NONOESP=~/repos/github.com/nonoesp
 
