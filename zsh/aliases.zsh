@@ -27,3 +27,5 @@ alias expensed="nano ~/Library/Mobile\ Documents/27N4MQEA55\~pro\~writer/Documen
 alias gmail="open https://gmail.com"
 alias youtube="open https://youtube.com/nonomartinezalonso"
 alias upload="open https://youtube.com/upload"
+
+alias lv="cd $PROJECTS/live"
