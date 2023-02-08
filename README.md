@@ -38,7 +38,7 @@ use, and build on what you do use.
 There's a few special files in the hierarchy.
 
 - **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
-  available everywhere.
+  available everywhere. *You need to `chmod -R 755 $ZSH/bin/new_command`.*
 - **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
   environment.
 - **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
