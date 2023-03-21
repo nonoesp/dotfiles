@@ -9,7 +9,7 @@ alias dw='defaults write $*'
 alias a="php artisan"
 
 # IP addresses
-alias ip="curl https://diagnostic.opendns.com/myip ; echo"
+alias ip="curl https://api.ipify.org ; echo"
 
 # Fast open
 alias o="open ."
