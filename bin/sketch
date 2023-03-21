@@ -1,0 +1,14 @@
+DATE=$(date "+%y%m%d")
+cd $PROJECTS/sketch/instagram/
+mkdir -p $DATE
+cd $DATE
+
+for filepath in ~/Desktop/sketch-*.jpg ~/Desktop/sketch-*.png ~/Desktop/download*png
+do
+    mv "$filepath" . 2>/dev/null
+    rename -S download.png 01-00.png ./* 2>/dev/null
+    rename -S download- 01-0 ./* 2>/dev/null
+    rename -S sketch- 00-00_sketch- ./sketch-* 2>/dev/null
+done
+
+open .
