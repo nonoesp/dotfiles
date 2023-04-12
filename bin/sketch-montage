@@ -6,7 +6,7 @@
 DOWNLOAD_SIZE=128
 GEO_SIZE=128
 GEO_SPACING=48
-IMAGE_PADDING=512
+IMAGE_PADDING=256
 
 # Variables.
 DATE=$(date "+%y%m%d")
@@ -15,14 +15,14 @@ DOWNLOAD_PATH=~/Desktop
 
 # Download.
 echo › Downloading...
-ts-node ~/repos/github.com/nonoesp/live/0035/sketch-downloader/download.ts --size 256
+ts-node ~/repos/github.com/nonoesp/live/0035/sketch-downloader/download.ts --size $DOWNLOAD_SIZE
 
 # Montage.
 echo › Montage...
 montage \
     -tile 18x0 \
-    -geometry 256x256+$GEO_SPACING+$GEO_SPACING \
-    ~/Desktop/images/* \
+    -geometry $(echo $GEO_SIZE)x$(echo $GEO_SIZE)+$GEO_SPACING+$GEO_SPACING \
+    $DOWNLOAD_PATH/images/* \
     "$(echo $DOWNLOAD_PATH/$IMAGE_NAME)"
 
 # Calculate padded size.
