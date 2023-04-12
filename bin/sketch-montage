@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# Downloads sketch.nono.ma drawings and makes a montage.
+
+# Config.
+DOWNLOAD_SIZE=128
+GEO_SIZE=128
+GEO_SPACING=48
+IMAGE_PADDING=512
+
+# Variables.
+DATE=$(date "+%y%m%d")
+IMAGE_NAME=$(echo $DATE)_sketch-nono-ma.jpg
+DOWNLOAD_PATH=~/Desktop
+
+# Download.
+echo › Downloading...
+ts-node ~/repos/github.com/nonoesp/live/0035/sketch-downloader/download.ts --size 256
+
+# Montage.
+echo › Montage...
+montage \
+    -tile 18x0 \
+    -geometry 256x256+$GEO_SPACING+$GEO_SPACING \
+    ~/Desktop/images/* \
+    "$(echo $DOWNLOAD_PATH/$IMAGE_NAME)"
+
+# Calculate padded size.
+MONTAGE_SIZE=$(identify -format "%wx%h" $DOWNLOAD_PATH/$IMAGE_NAME)
+
+EXTENT=$(python -c \
+"sizes = '$MONTAGE_SIZE'.split('x'); w = sizes[0]; h = sizes[1]; print(f'{int(w)+$IMAGE_PADDING}x{int(h)+$IMAGE_PADDING}')")
+
+# Pad.
+PADDED_PATH=$(echo $DOWNLOAD_PATH/$IMAGE_NAME).padded.jpg
+echo › Padding...
+convert \
+    -background '#ffffff' \
+    -gravity center \
+    "$(echo $DOWNLOAD_PATH/$IMAGE_NAME)" \
+    -resize $MONTAGE_SIZE \
+    -extent $EXTENT \
+    "$PADDED_PATH"
+
+echo Padded image is $EXTENT pixels.
+echo › Resizing...
+
+RESIZED_PATH=$PADDED_PATH.resized.jpg
+cp "$PADDED_PATH" "$RESIZED_PATH"
+mogrify -resize 50% "$RESIZED_PATH"
+
+echo Resized to 50% at $(identify -format "%wx%h" $RESIZED_PATH) pixels.
+
+echo "Done."
