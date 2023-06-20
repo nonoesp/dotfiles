@@ -15,7 +15,7 @@ DOWNLOAD_PATH=~/Desktop
 
 # Download.
 echo › Downloading...
-ts-node ~/repos/github.com/nonoesp/live/0035/sketch-downloader/download.ts --size $DOWNLOAD_SIZE
+ts-node ~/repos/github.com/nonoesp/live@main/0035/sketch-downloader/download.ts --size $DOWNLOAD_SIZE
 
 # Montage.
 echo › Montage...
