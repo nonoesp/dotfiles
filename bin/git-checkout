@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# A quick way to checkout a branch.
+#
+# $1 - The repository.
+# $2 - The branch name.
+# $3 - The name of the repo.
+#
+# Examples
+#
+#   git-checkout "https://github.com/nonoesp/laravel-folio" main folio@main
+#
+
+echo "Cloning $1 -b $2..."
+
+git clone $1 -b $2 $3 -q
+
+echo "Ready at $(pwd)/$3"
