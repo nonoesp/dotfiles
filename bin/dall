@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Creates a folder to archive DALL-E generations and their prompts.
+#
+# $1 - Directory name.
+# $2 - Prompt.
+#
+# Examples
+#
+#   dall pixar-house "disney pixar poster featuring a house, 9:16 ar"
+#
+
+DATE=$(date "+%y%m%d_%H%M%S")
+SAVE_DIR=$PROJECTS/machine-learning/dalle-3/$DATE\_${1}
+mkdir -p $SAVE_DIR
+echo ${2} > $SAVE_DIR/prompt.txt
+open $SAVE_DIR
