@@ -14,6 +14,7 @@ for app in "App Store" \
 	"TV" \
 	"Contacts" \
 	"Calendar" \
+	"Downloads" \
 	"Pages" \
 	"Keynote" \
 	"News" \
@@ -29,6 +30,7 @@ for app in "App Store" \
     "Mail" \
     "FaceTime" \
     "Safari" \
+    "System Settings" \
     "Launchpad" \
 	"Numbers"; do
 	dockutil --remove "${app}" &> /dev/null
