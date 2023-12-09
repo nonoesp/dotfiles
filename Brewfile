@@ -19,7 +19,6 @@ cask "dropbox"              # (Dropbox) Client for the Dropbox cloud storage ser
 cask "iterm2"               # (iTerm 2) Terminal emulator as alternative to Apple's Terminal app
 cask "google-chrome"        # (Google Chrome) Web browser
 cask "descript"             # (Descript) Audio and video editor
-cask "toggl-track"          # (Toggl Track) Time tracker
 cask "lulu"                 # (LuLu) Open-source firewall to block unknown outgoing connections
 cask "hiddenbar"            # (Hidden Bar) Utility to hide menu bar items
 cask "elgato-control-center"# (Elgato Control Center) Control your Elgato Key Lights
@@ -32,7 +31,6 @@ cask "loopback"             # (Loopback) Cable-free audio router
 cask "obs"                  # (OBS) Open-source software for live streaming and screen recording
 cask "zoom"                 # (Zoom) Video communication and virtual meeting platform
 cask "spotify"              # (Spotify) Music streaming service
-cask "exodus"               # (Exodus) Desktop wallet for cryptocurrency assets
 cask "brave-browser"        # (Brave) Web browser focusing on privacy
 cask "discord"              # (Discord) Voice and text chat software
 cask "remarkable"           # (Remarkable) View, Screen Share, organize, import, and download files to a reMarkable device
@@ -49,7 +47,6 @@ brew "docker"               # (Docker) Pack, ship and run any application as a l
 cask "rode-central"         # (Rode Central) Configure RØDE device settings, features, functions, and firmware
 cask "geekbench"            # (Geekbench) Tool to measure the computer system's performance
 
-tap "homebrew/cask-drivers"
 cask "logitech-camera-settings" # (Logitech Camera Settings) Provides access to camera controls
 cask "logi-options-plus"        # (Logitech Options+) Software for Logitech devices
 
@@ -66,6 +63,11 @@ cask "logi-options-plus"        # (Logitech Options+) Software for Logitech devi
 # cask "telegram"           # (Telegram for macOS) Messaging app with a focus on speed and security
 # cask "mendeley"           # (Mendeley) Research management tool
 
+# Removed
+
+# cask "toggl-track"          # (Toggl Track) Time tracker
+# cask "exodus"               # (Exodus) Desktop wallet for cryptocurrency assets
+
 #  ██████╗  ██╗       ██╗
 # ██╔════╝  ██║       ██║
 # ██║       ██║       ██║
@@ -80,10 +82,10 @@ brew "ssh-copy-id"      # Add a public key to a remote machine's authorized_keys
 brew "duti"             # Select default apps for documents and URL schemes on macOS
 brew "go"               # Open source programming language to build simple/reliable/efficient software
 brew "node"             # Platform built on V8 to build network applications
-brew "rust"
-brew "rustup"
+# brew "rust"
+# brew "rustup"
 brew "ffmpeg"           # Play, record, convert, and stream audio and video
-cask "ngrok"            # (ngrok) Reverse proxy, secure introspectable tunnels to localhost
+# cask "ngrok"            # (ngrok) Reverse proxy, secure introspectable tunnels to localhost
 brew "imagemagick"      # Tools and libraries to manipulate images in many formats
 tap "yt-dlp/taps"
 brew "yt-dlp"           # Fork of youtube-dl with additional features and fixes
@@ -104,14 +106,14 @@ brew "nginx"            # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy 
 brew "mysql"            # Open source relational database management system
 brew "phpmyadmin"       # Web interface for MySQL and MariaDB
 
-brew "tesseract"        # OCR (Optical Character Recognition) engine
-brew "xpdf"             # PDF viewer
+# brew "tesseract"        # OCR (Optical Character Recognition) engine
+# brew "xpdf"             # PDF viewer
 brew "tree"             # Display directories as trees (with optional color/HTML output)
 brew "rename"           # Perl-powered file rename script with many helpful built-ins
 brew "figlet"           # Banner-like program prints strings as ASCII art
-brew "p7zip"            # 7-Zip (high compression file archiver) implementation
-cask "basictex"         # (BasicTeX) Compact TeX distribution as alternative to the full TeX Live / MacTeX
-brew "pandoc"           # Swiss-army knife of markup format conversion
+# brew "p7zip"            # 7-Zip (high compression file archiver) implementation
+# cask "basictex"         # (BasicTeX) Compact TeX distribution as alternative to the full TeX Live / MacTeX
+# brew "pandoc"           # Swiss-army knife of markup format conversion
 
 # brew "mas"            # Mac App Store command-line interface
 # brew "pngcheck"       # Print info and check PNG, JNG, and MNG files
