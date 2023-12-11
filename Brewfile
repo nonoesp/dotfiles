@@ -82,6 +82,7 @@ brew "ssh-copy-id"      # Add a public key to a remote machine's authorized_keys
 brew "duti"             # Select default apps for documents and URL schemes on macOS
 brew "go"               # Open source programming language to build simple/reliable/efficient software
 brew "node"             # Platform built on V8 to build network applications
+brew "yarn"             # JavaScript package manager
 # brew "rust"
 # brew "rustup"
 brew "ffmpeg"           # Play, record, convert, and stream audio and video
@@ -92,7 +93,6 @@ brew "yt-dlp"           # Fork of youtube-dl with additional features and fixes
 brew "asciinema"        # Record and share terminal sessions
 brew "ack"              # Search tool like grep, but optimized for programmers
 brew "glow"             # Render markdown on the CLI
-brew "dockutil"         # Tool for managing dock items
 brew "wget"             # Internet file retriever
 brew "jq"               # Lightweight and flexible command-line JSON processor
 brew "curl"             # Get a file from an HTTP, HTTPS or FTP server
@@ -107,7 +107,7 @@ brew "mysql"            # Open source relational database management system
 brew "phpmyadmin"       # Web interface for MySQL and MariaDB
 
 # brew "tesseract"        # OCR (Optical Character Recognition) engine
-# brew "xpdf"             # PDF viewer
+brew "xpdf"             # PDF viewer
 brew "tree"             # Display directories as trees (with optional color/HTML output)
 brew "rename"           # Perl-powered file rename script with many helpful built-ins
 brew "figlet"           # Banner-like program prints strings as ASCII art
@@ -126,3 +126,7 @@ brew "figlet"           # Banner-like program prints strings as ASCII art
 # brew "vault"            # Secures, stores, and tightly controls access to secrets
 # brew tap aws/tap
 # brew "aws-sam-cli"        # CLI tool to build, test, debug, and deploy Serverless applications using AWS Lambda
+
+# No longer work.
+
+# brew "dockutil"         # Tool for managing dock items
