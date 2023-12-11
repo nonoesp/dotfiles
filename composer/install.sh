@@ -19,4 +19,4 @@ fi
 echo "> valet"
 
 valet install
-valet use php@8.1
+valet use php@8.3
