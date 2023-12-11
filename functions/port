@@ -1,0 +1,4 @@
+# List open processes at port.
+port() {
+    lsof -i :"$@"
+}
