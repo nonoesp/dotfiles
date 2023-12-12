@@ -130,3 +130,15 @@ brew "figlet"           # Banner-like program prints strings as ASCII art
 # No longer work.
 
 # brew "dockutil"         # Tool for managing dock items
+
+# ███████╗  ██████╗  ███╗   ██╗ ████████╗ ███████╗
+# ██╔════╝ ██╔═══██╗ ████╗  ██║ ╚══██╔══╝ ██╔════╝
+# █████╗   ██║   ██║ ██╔██╗ ██║    ██║    ███████╗
+# ██╔══╝   ██║   ██║ ██║╚██╗██║    ██║    ╚════██║
+# ██║      ╚██████╔╝ ██║ ╚████║    ██║    ███████║
+# ╚═╝       ╚═════╝  ╚═╝  ╚═══╝    ╚═╝    ╚══════╝
+
+# Fonts.
+
+brew tap homebrew/cask-fonts
+brew "font-inter"
