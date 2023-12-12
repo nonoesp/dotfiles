@@ -43,7 +43,7 @@ cask "processing"           # (Processing) Flexible software sketchbook and a la
 cask "authy"                # (Authy Desktop) Two-factor authentication software
 cask "calibre"              # (calibre) E-books management software
 cask "slack"                # (Slack) Team communication and collaboration software
-brew "docker"               # (Docker) Pack, ship and run any application as a lightweight container
+cask "docker"               # (Docker) Pack, ship and run any application as a lightweight container
 cask "rode-central"         # (Rode Central) Configure RØDE device settings, features, functions, and firmware
 cask "geekbench"            # (Geekbench) Tool to measure the computer system's performance
 
