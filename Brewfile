@@ -142,3 +142,6 @@ brew "figlet"           # Banner-like program prints strings as ASCII art
 
 brew tap homebrew/cask-fonts
 brew "font-inter"
+brew "font-ibm-plex-mono"
+brew "font-ibm-plex-sans"
+brew "font-ibm-plex-serif"
