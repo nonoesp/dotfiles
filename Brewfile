@@ -40,18 +40,21 @@ cask "fission"              # (Fission) Audio editor
 cask "farrago"              # (Farrago) Audio playback
 cask "netron"               # (Netron) Visualizer for neural network, deep learning, and machine learning models
 cask "processing"           # (Processing) Flexible software sketchbook and a language for learning how to code
-cask "authy"                # (Authy Desktop) Two-factor authentication software
 cask "calibre"              # (calibre) E-books management software
 cask "slack"                # (Slack) Team communication and collaboration software
 cask "docker"               # (Docker) Pack, ship and run any application as a lightweight container
 cask "rode-central"         # (Rode Central) Configure RØDE device settings, features, functions, and firmware
 cask "geekbench"            # (Geekbench) Tool to measure the computer system's performance
+cask "qbittorrent"          # (qBittorrent) Peer to peer Bitorrent client
+cask "raspberry-pi-imager"  # (Raspberry Pi Imager) Imaging utility to install operating systems to a microSD card"
 
 cask "logitech-camera-settings" # (Logitech Camera Settings) Provides access to camera controls
 cask "logi-options-plus"        # (Logitech Options+) Software for Logitech devices
+cask "logitech-presentation"    # (Logitech Presentation) Presentation software
 
 # Desktop apps I'm not actively using.
 
+# cask "authy"                # (Authy Desktop) Two-factor authentication software
 # cask "skype"              # (Skype) Video chat, voice call and instant messaging application
 # cask "postman"            # (Postman) Collaboration platform for API development
 # cask "forecast"           # (Forecast) Podcast MP3 encoder with chapters
