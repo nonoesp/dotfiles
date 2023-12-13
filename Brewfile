@@ -46,12 +46,12 @@ cask "slack"                # (Slack) Team communication and collaboration softw
 cask "docker"               # (Docker) Pack, ship and run any application as a lightweight container
 cask "rode-central"         # (Rode Central) Configure RØDE device settings, features, functions, and firmware
 cask "geekbench"            # (Geekbench) Tool to measure the computer system's performance
+cask "qbittorrent"          # (qBittorrent) Peer to peer Bitorrent client
 
 cask "logitech-camera-settings" # (Logitech Camera Settings) Provides access to camera controls
 cask "logi-options-plus"        # (Logitech Options+) Software for Logitech devices
 
 # Desktop apps I'm not actively using.
-
 # cask "skype"              # (Skype) Video chat, voice call and instant messaging application
 # cask "postman"            # (Postman) Collaboration platform for API development
 # cask "forecast"           # (Forecast) Podcast MP3 encoder with chapters
