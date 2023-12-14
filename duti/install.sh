@@ -34,6 +34,8 @@ duti -s com.microsoft.VSCode php all
 duti -s com.microsoft.VSCode log all
 # Makefile
 duti -s com.microsoft.VSCode Makefile all
+# TypeScript
+duti -s com.microsoft.VSCode ts all
 
 ###############################################################################
 # iA Writer                                                                   #
