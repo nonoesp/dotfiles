@@ -1,6 +1,9 @@
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 export PATH="/Users/nono/.composer/vendor/bin:$PATH"
 
+# Export the base python's path.
+export PYTHON=$(conda info --base)/bin/python
+
 # Shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
