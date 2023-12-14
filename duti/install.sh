@@ -2,6 +2,9 @@
 
 echo "› duti"
 
+# You can find app bundle identifiers with mdls.
+# mdls -name kMDItemCFBundleIdentifier -r /Applications/VLC.app
+
 ###############################################################################
 # General                                                                     #
 ###############################################################################
@@ -62,5 +65,11 @@ duti -s com.apple.QuickTimePlayerX wav all
 duti -s com.apple.QuickTimePlayerX aiff all
 duti -s com.apple.QuickTimePlayerX ogg all
 duti -s com.apple.QuickTimePlayerX mov all
+
+###############################################################################
+# VLC                                                                         #
+###############################################################################
+
+duti -s org.videolan.vlc webm all
 
 # com.apple.Preview
