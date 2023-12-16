@@ -85,6 +85,7 @@ brew "ssh-copy-id"      # Add a public key to a remote machine's authorized_keys
 brew "duti"             # Select default apps for documents and URL schemes on macOS
 brew "go"               # Open source programming language to build simple/reliable/efficient software
 brew "node"             # Platform built on V8 to build network applications
+brew "deno"             # Secure runtime for JavaScript and TypeScript
 brew "yarn"             # JavaScript package manager
 # brew "rust"
 # brew "rustup"
