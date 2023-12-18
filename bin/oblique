@@ -1,4 +1,13 @@
 #!/bin/bash
+#!/bin/sh
+#
+# Prints Oblique Strategies to the console.
+# Nono Martínez Alonso
+# 
+# "Oblique Strategies is a method jointly devised by the musician
+# Brian Eno and artist Peter Schmidt to overcome creative blocks."
+#
+# Source: https://matt-rickard.com/list-of-all-oblique-strategies
 
 # Define your list of strings, each on a new line
 strings=(
