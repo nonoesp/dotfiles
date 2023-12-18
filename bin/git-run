@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# A quick way to checkout, develop, and run a branch.
+# Nono Martínez Alonso
+#
+# $1 - The branch name.
+#
+# Examples
+#
+#   branch main
+#
+
+# Replace forward slashes with dashes.
+CLEAN_BRANCH_NAME=${1//\//-}
+
+# Prepend with client@.
+DIR_NAME=$ACTIVE_REPO_NAME@$CLEAN_BRANCH_NAME
+
+# Clone repository at a folder with the branch name.
+echo "Cloning $1 at $DIR_NAME..."
+git-checkout $ACTIVE_REPO_URL $1 $DIR_NAME
+
+# Open in Visual Studio Code, install, build, and dev.
+cd $DIR_NAME && e; yarn; yarn build; yarn dev
