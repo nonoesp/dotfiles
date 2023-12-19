@@ -1,0 +1,11 @@
+#!/bin/bash
+
+USERNAME="$1"
+PASSWORD="$2"
+
+for file in *.sql.gz; do
+    db_name=`echo $file | sed -e 's/^[0-9_]*\.//' -e 's/.sql.gz$//'`
+    echo "Creating and importing database: $db_name"
+    mysql -u $USERNAME -p$PASSWORD -e "CREATE DATABASE IF NOT EXISTS \`$db_name\`"
+    gunzip < $file | mysql -u $USERNAME -p$PASSWORD $db_name
+done
