@@ -1,0 +1,19 @@
+#!/bin/bash
+
+USERNAME="$1"
+PASSWORD="$2"
+
+databases=`mysql -u $USERNAME -p$PASSWORD -e "SHOW DATABASES;" | tr -d "| " | grep -v Database`
+
+echo $databases
+
+for db in $databases; do
+    if [[ "$db" != "information_schema" ]] \
+    && [[ "$db" != "performance_schema" ]] \
+    && [[ "$db" != "mysql" ]] \
+    && [[ "$db" != "sys" ]] \
+    && [[ "$db" != _* ]] ; then
+        echo "Dumping $db..."
+        mysqldump -u $USERNAME -p$PASSWORD --databases $db | gzip > `date +%y%m%d_%H%M%S`.$db.sql.gz
+    fi
+done
