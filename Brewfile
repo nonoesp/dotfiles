@@ -87,11 +87,10 @@ brew "go"               # Open source programming language to build simple/relia
 brew "node"             # Platform built on V8 to build network applications
 brew "deno"             # Secure runtime for JavaScript and TypeScript
 brew "yarn"             # JavaScript package manager
-# brew "rust"
-# brew "rustup"
 brew "ffmpeg"           # Play, record, convert, and stream audio and video
-# cask "ngrok"            # (ngrok) Reverse proxy, secure introspectable tunnels to localhost
 brew "imagemagick"      # Tools and libraries to manipulate images in many formats
+tap "eddieantonio/eddieantonio"
+brew "imgcat"
 tap "yt-dlp/taps"
 brew "yt-dlp"           # Fork of youtube-dl with additional features and fixes
 brew "asciinema"        # Record and share terminal sessions
@@ -110,11 +109,12 @@ brew "nginx"            # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy 
 brew "mysql"            # Open source relational database management system
 brew "phpmyadmin"       # Web interface for MySQL and MariaDB
 
-# brew "tesseract"        # OCR (Optical Character Recognition) engine
 brew "xpdf"             # PDF viewer
 brew "tree"             # Display directories as trees (with optional color/HTML output)
 brew "rename"           # Perl-powered file rename script with many helpful built-ins
 brew "figlet"           # Banner-like program prints strings as ASCII art
+
+# brew "tesseract"        # OCR (Optical Character Recognition) engine
 # brew "p7zip"            # 7-Zip (high compression file archiver) implementation
 # cask "basictex"         # (BasicTeX) Compact TeX distribution as alternative to the full TeX Live / MacTeX
 # brew "pandoc"           # Swiss-army knife of markup format conversion
@@ -125,6 +125,7 @@ brew "figlet"           # Banner-like program prints strings as ASCII art
 # cask "google-cloud-sdk"   # (Google Cloud SDK) Set of tools to manage resources and applications hosted on Google Cloud
 # cask "background-music"   # (Background Music) Audio utility
 
+# cask "ngrok"            # (ngrok) Reverse proxy, secure introspectable tunnels to localhost
 # brew "awscli"           # Official Amazon AWS command-line interface
 # brew "mackup"           # Keep your Mac's application settings in sync
 # brew "vault"            # Secures, stores, and tightly controls access to secrets
