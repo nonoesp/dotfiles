@@ -23,8 +23,10 @@ elif [ ! -z "$1" ] && [ -s "$INBOX/$1" ]; then
  cd "$INBOX/$1"
 elif [ ! -z "$1" ] && [ -s "$WEB/$1" ]; then
  cd "$WEB/$1"
-elif [ ! -z "$1" ] && [ -s "$NONOESP/$1" ]; then
- cd "$NONOESP/$1"
+elif [ ! -z "$1" ] && [ -s "$GITHUB_NONOESP/$1" ]; then
+ cd "$GITHUB_NONOESP/$1"
+elif [ ! -z "$1" ] && [ -s "$BITBUCKET_NONOESP/$1" ]; then
+ cd "$BITBUCKET_NONOESP/$1"
 else
   cd "$PROJECTS/$1"
 fi

@@ -12,7 +12,8 @@ export INBOX=~/Dropbox/0_Inbox
 export PROJECTS=~/Dropbox/1_Projects
 export LIBRARY=~/Dropbox/2_Library
 export WEB=~/repos/web
-export NONOESP=~/repos/github.com/nonoesp
+export GITHUB_NONOESP=~/repos/github.com/nonoesp
+export BITBUCKET_NONOESP=~/repos/bitbucket.org/nonoesp
 
 # Shortcut to notable folders
 export DOWNLOADS=$INBOX/downloads

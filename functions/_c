@@ -4,6 +4,7 @@ _files -W $LIBRARY -/
 _files -W $INBOX -/
 _files -W $WEB -/
 _files -W $GOPATH/src/github.com/nonoesp -/
-_files -W $NONOESP -/
+_files -W $GITHUB_NONOESP -/
+_files -W $BITBUCKET_NONOESP -/
 
 # See further documentation in `functions/c`.
