@@ -1,6 +1,7 @@
 #compdef c
 _files -W $PROJECTS -/
 _files -W $LIBRARY -/
+_files -W $INBOX/settings -/
 _files -W $INBOX -/
 _files -W $WEB -/
 _files -W $GOPATH/src/github.com/nonoesp -/
