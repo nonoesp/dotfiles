@@ -114,10 +114,11 @@ brew "tree"             # Display directories as trees (with optional color/HTML
 brew "rename"           # Perl-powered file rename script with many helpful built-ins
 brew "figlet"           # Banner-like program prints strings as ASCII art
 
+cask "basictex"         # (BasicTeX) Compact TeX distribution as alternative to the full TeX Live / MacTeX
+brew "pandoc"           # Swiss-army knife of markup format conversion
+
 # brew "tesseract"        # OCR (Optical Character Recognition) engine
 # brew "p7zip"            # 7-Zip (high compression file archiver) implementation
-# cask "basictex"         # (BasicTeX) Compact TeX distribution as alternative to the full TeX Live / MacTeX
-# brew "pandoc"           # Swiss-army knife of markup format conversion
 
 # brew "mas"            # Mac App Store command-line interface
 # brew "pngcheck"       # Print info and check PNG, JNG, and MNG files
