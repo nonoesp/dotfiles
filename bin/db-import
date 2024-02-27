@@ -9,3 +9,10 @@ for file in *.sql.gz; do
     mysql -u $USERNAME -p$PASSWORD -e "CREATE DATABASE IF NOT EXISTS \`$db_name\`"
     gunzip < $file | mysql -u $USERNAME -p$PASSWORD $db_name
 done
+
+for file in *.sql; do
+    db_name=`echo $file | sed -e 's/^[0-9_]*\.//' -e 's/.sql$//' -e 's/^mysql-//'`
+    echo "Creating and importing database: $db_name"
+    mysql -u $USERNAME -p$PASSWORD -e "CREATE DATABASE IF NOT EXISTS \`$db_name\`"
+    cat $file | mysql -u $USERNAME -p$PASSWORD $db_name
+done
