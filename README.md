@@ -94,6 +94,17 @@ inspired from Ryan's original project.
 
 ## Nono's notes
 
+### Add new commands to bin
+
+```sh
+touch new-cmd
+chmod 755 mkd
+```
+
+You can see other file's permissions with `stat -f "%A %N" bin/*`.
+
+Functions can be executed with `644`.
+
 ### Two ways to set a dictionary
 
 ```bash

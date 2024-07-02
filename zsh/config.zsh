@@ -40,3 +40,6 @@ bindkey '^?' backward-delete-char
 
 # aws-sam-cli
 export SAM_CLI_TELEMETRY=0
+
+# diffusers
+PYTORCH_ENABLE_MPS_FALLBACK=1
