@@ -42,4 +42,6 @@ bindkey '^?' backward-delete-char
 export SAM_CLI_TELEMETRY=0
 
 # diffusers
-PYTORCH_ENABLE_MPS_FALLBACK=1
+export PYTORCH_ENABLE_MPS_FALLBACK=1
+export HF_HOME=/Volumes/NON_T7S_1TB/diffusers
+export OLLAMA_MODELS=/Volumes/NON_T7S_1TB/ollama-models

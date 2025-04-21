@@ -1,2 +1,4 @@
 [mysqld]
-default_authentication_plugin=mysql_native_password
+#skip-grant-tables
+#bind-address=127.0.0.1
+#default_authentication_plugin=mysql_native_password # Deprecated in MySQL 9.

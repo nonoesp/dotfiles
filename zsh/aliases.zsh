@@ -33,3 +33,6 @@ alias lv="cd $PROJECTS/live"
 alias dark="sh $SCRIPTS/macos-theme-dark.sh"
 alias light="sh $SCRIPTS/macos-theme-light.sh"
 alias t="sh $SCRIPTS/macos-theme-toggle.sh"
+
+# HuggingFace CLI
+alias hf="huggingface-cli"
