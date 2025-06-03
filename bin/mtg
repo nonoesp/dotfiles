@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Makes a montage with the given images.
+#
+# $1 - Image paths.
+#
+# Examples
+#
+#   mtg image1.png image2.jpg
+#
+
+current_date=$(date +"%Y%m%d_%H%M%S")
+montage -tile 5x0 -geometry 512x512+10+10 -background transparent $@ ~/Desktop/$current_date.png
