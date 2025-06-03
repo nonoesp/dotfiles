@@ -23,6 +23,8 @@ elif [ ! -z "$1" ] && [ -s "$INBOX/$1" ]; then
  cd "$INBOX/$1"
 elif [ ! -z "$1" ] && [ -s "$NEW/$1" ]; then
  cd "$NEW/$1"
+elif [ ! -z "$1" ] && [ -s "$DOCS/$1" ]; then
+ cd "$DOCS/$1"
 elif [ ! -z "$1" ] && [ -s "$INBOX/settings/$1" ]; then
  cd "$INBOX/settings/$1"
 elif [ ! -z "$1" ] && [ -s "$WEB/$1" ]; then
