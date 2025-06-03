@@ -10,4 +10,4 @@
 #
 
 current_date=$(date +"%Y%m%d_%H%M%S")
-montage -tile 5x0 -geometry 512x512+10+10 -background transparent $@ ~/Desktop/$current_date.png
+montage -tile 5x0 -geometry 512x512+10+10 -background transparent "$@" ~/Desktop/$current_date.png
