@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+# Original command by Evan Hahn
+# https://codeberg.org/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/nato
+
+# Convert character to NATO phonetic alphabet word.
+# Converted by Cursor to work with bash 3.2 (macOS default).
+nato_word() {
+  case "$1" in
+    a|A) echo "Alfa" ;;
+    b|B) echo "Bravo" ;;
+    c|C) echo "Charlie" ;;
+    d|D) echo "Delta" ;;
+    e|E) echo "Echo" ;;
+    f|F) echo "Foxtrot" ;;
+    g|G) echo "Golf" ;;
+    h|H) echo "Hotel" ;;
+    i|I) echo "India" ;;
+    j|J) echo "Juliet" ;;
+    k|K) echo "Kilo" ;;
+    l|L) echo "Lima" ;;
+    m|M) echo "Mike" ;;
+    n|N) echo "November" ;;
+    o|O) echo "Oscar" ;;
+    p|P) echo "Papa" ;;
+    q|Q) echo "Quebec" ;;
+    r|R) echo "Romeo" ;;
+    s|S) echo "Sierra" ;;
+    t|T) echo "Tango" ;;
+    u|U) echo "Uniform" ;;
+    v|V) echo "Victor" ;;
+    w|W) echo "Whiskey" ;;
+    x|X) echo "X-ray" ;;
+    y|Y) echo "Yankee" ;;
+    z|Z) echo "Zulu" ;;
+    1) echo "One" ;;
+    2) echo "Two" ;;
+    3) echo "Three" ;;
+    4) echo "Four" ;;
+    5) echo "Five" ;;
+    6) echo "Six" ;;
+    7) echo "Seven" ;;
+    8) echo "Eight" ;;
+    9) echo "Nine" ;;
+    0) echo "Zero" ;;
+    *) echo "$1" ;;
+  esac
+}
+
+for word in "$@"; do
+  output=()
+  for ((i=0; i<${#word}; i++)); do
+    char=${word:$i:1}
+    value=$(nato_word "$char")
+    output+=("$value")
+  done
+  echo "${output[*]}"
+done

@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+# ANSI color codes.
+RESET='\033[0m'
+COLOR1='\033[1;34m'  # Bright Blue
+COLOR2='\033[0;36m'  # Cyan
+
+# Outputs phoneticaphonetic alphabet words in English (NATO) and Spanish.
+# Cursor code below forces phonetic words of both languages to start at the same spot.
+
+# Sample usage.
+# > nato ALGO123
+# ```
+# Alfa     Lima Golf    Oscar    One Two Three
+# Alicante León Granada Orihuela Uno Dos Tres
+# ```
+
+# Capture outputs from both commands.
+natoen_output=$(natoen "$@")
+natoes_output=$(natoes "$@")
+
+# Store lines in arrays.
+en_lines=()
+es_lines=()
+while IFS= read -r line; do
+  en_lines+=("$line")
+done <<< "$natoen_output"
+while IFS= read -r line; do
+  es_lines+=("$line")
+done <<< "$natoes_output"
+
+# Process each pair of corresponding lines.
+for line_idx in "${!en_lines[@]}"; do
+  en_line="${en_lines[$line_idx]}"
+  es_line="${es_lines[$line_idx]}"
+  
+  # Split lines into arrays of words.
+  read -ra en_words <<< "$en_line"
+  read -ra es_words <<< "$es_line"
+  
+  # Calculate max width for each column position.
+  max_widths=()
+  for i in "${!en_words[@]}"; do
+    en_len=${#en_words[$i]}
+    es_len=${#es_words[$i]}
+    max_widths[$i]=$(( en_len > es_len ? en_len : es_len ))
+  done
+  
+  # Build padded output lines with colors: COLOR1 for English, COLOR2 for Spanish.
+  en_padded=""
+  es_padded=""
+  for i in "${!en_words[@]}"; do
+    en_word="${en_words[$i]}"
+    es_word="${es_words[$i]}"
+    max_width="${max_widths[$i]}"
+    
+    # Pad English word to max width with COLOR1.
+    en_padded+="${COLOR1}${en_word}${RESET}"
+    en_padding=$((max_width - ${#en_word}))
+    if [ $i -lt $((${#en_words[@]} - 1)) ]; then
+      en_padded+=$(printf "%*s" $((en_padding + 2)) " ")
+    fi
+    
+    # Pad Spanish word to max width with COLOR2.
+    es_padded+="${COLOR2}${es_word}${RESET}"
+    es_padding=$((max_width - ${#es_word}))
+    if [ $i -lt $((${#es_words[@]} - 1)) ]; then
+      es_padded+=$(printf "%*s" $((es_padding + 2)) " ")
+    fi
+  done
+  
+  echo -e "$en_padded"
+  echo -e "$es_padded"
+done

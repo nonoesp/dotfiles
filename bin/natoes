@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+# Original command by Evan Hahn
+# https://codeberg.org/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/nato
+#
+# Convert character to Spanish phonetic alphabet word.
+# Converted by Cursor to work with bash 3.2 (macOS default).
+# Adapted to Castellano (España) phonetic alphabet by Nono
+nato_word() {
+  case "$1" in
+    a|A) echo "Alicante" ;;
+    b|B) echo "Barcelona" ;;
+    c|C) echo "Cádiz" ;;
+    d|D) echo "Dinamarca" ;; # Domingo
+    e|E) echo "España" ;;
+    f|F) echo "Francia" ;;
+    g|G) echo "Granada" ;;
+    h|H) echo "Huelva" ;;
+    i|I) echo "Italia" ;; # India
+    j|J) echo "Jaen" ;; # Jose
+    k|K) echo "Kilo" ;;
+    l|L) echo "Lima" ;; # León
+    m|M) echo "Madrid" ;;
+    n|N) echo "Navarra" ;;
+    o|O) echo "Óscar" ;; # Oviedo
+    p|P) echo "Pamplona" ;;
+    q|Q) echo "Queso" ;;
+    r|R) echo "Roma" ;;
+    s|S) echo "Sevilla" ;; # Santiago
+    t|T) echo "Toledo" ;; # Tarragona
+    u|U) echo "Uruguay" ;; # Uva
+    v|V) echo "Valencia" ;;
+    w|W) echo "Whiskey" ;;
+    x|X) echo "Xilófono" ;;
+    y|Y) echo "Yolanda" ;; # Yegua, Yodo, Yeso
+    z|Z) echo "Zorro" ;; # Zamora
+    1) echo "Uno" ;;
+    2) echo "Dos" ;;
+    3) echo "Tres" ;;
+    4) echo "Cuatro" ;;
+    5) echo "Cinco" ;;
+    6) echo "Seis" ;;
+    7) echo "Siete" ;;
+    8) echo "Ocho" ;;
+    9) echo "Nueve" ;;
+    0) echo "Cero" ;;
+    *) echo "$1" ;;
+  esac
+}
+
+for word in "$@"; do
+  output=()
+  for ((i=0; i<${#word}; i++)); do
+    char=${word:$i:1}
+    value=$(nato_word "$char")
+    output+=("$value")
+  done
+  echo "${output[*]}"
+done
