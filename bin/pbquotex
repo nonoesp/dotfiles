@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+# Turns each line in the clipboard into a Markdown quote, skipping empty lines.
+
+pbpaste | mdqt --skip-empty | pbcopy

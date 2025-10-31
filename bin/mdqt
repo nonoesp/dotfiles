@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+# Markdown Quote.
+# Turns the input string into a Markdown quote.
+# Adds '> ' in front of each line.
+# Collapses all continuous empty lines into one.
+
+skip_empty=0
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --skip-empty|-s)
+            skip_empty=1
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1" >&2
+            exit 1
+            ;;
+    esac
+done
+
+prev_was_empty=0
+
+while IFS= read -r line; do
+    trimmed="${line#"${line%%[![:space:]]*}"}"  # trim leading spaces
+    trimmed="${trimmed%"${trimmed##*[![:space:]]}"}"  # trim trailing spaces
+
+    if [[ -z "$trimmed" ]]; then
+        if [[ $skip_empty -eq 1 ]]; then
+            continue
+        elif [[ $prev_was_empty -eq 0 ]]; then
+            echo "> "
+            prev_was_empty=1
+        fi
+    elif [[ "$trimmed" == ">"* ]]; then
+        echo "$trimmed"
+        prev_was_empty=0
+    else
+        echo "> $trimmed"
+        prev_was_empty=0
+    fi
+done
