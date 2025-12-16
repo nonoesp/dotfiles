@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+# Command that opens the repository in the browser.
+
+# Example:
+# git@bitbucket.org:nonoesp/writing-ia-writer.git → https://bitbucket.org/nonoesp/writing-ia-writer
+# git@github.com:nonoesp/writing-ia-writer.git → https://github.com/nonoesp/writing-ia-writer
+# git@gitlab.com:ambr1/ambr-client.git → https://gitlab.com/ambr1/ambr-client
+
+# Get the repository URL from the remote origin.
+repo=$(git remote get-url origin)
+
+# Replace "git@" with "https://" and replace ":" with "/".
+repo=$(echo $repo | sed 's|:|/|' | sed 's/git@/https:\/\//')
+
+# Remove the ".git" from the end of the URL.
+repo=$(echo $repo | sed 's/\.git$//')
+
+# Open the repository in the browser.
+open $repo
