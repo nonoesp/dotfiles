@@ -18,9 +18,17 @@ COLOR2='\033[0;36m'  # Cyan
 # Alicante León Granada Orihuela Uno Dos Tres
 # ```
 
+# Set a variable with the user input commands $@,
+# but if that is empty, set it to the contents of the clipboard
+if [ -z "$@" ]; then
+  input=$(pbpaste)
+else
+  input="$@"
+fi
+
 # Capture outputs from both commands.
-natoen_output=$(natoen "$@")
-natoes_output=$(natoes "$@")
+natoen_output=$(natoen "$input")
+natoes_output=$(natoes "$input")
 
 # Store lines in arrays.
 en_lines=()
