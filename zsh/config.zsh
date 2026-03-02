@@ -8,15 +8,17 @@ autoload -U $ZSH/functions/*(:t)
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+setopt HIST_IGNORE_DUPS     # don't save duplicate commands
+setopt HIST_IGNORE_SPACE    # commands starting with space won't be saved
+setopt HIST_VERIFY          # show command before executing from history
 
-setopt NO_BG_NICE # don't nice background tasks
+setopt NO_BG_NICE           # don't nice background tasks
 setopt NO_HUP
 setopt NO_LIST_BEEP
-setopt LOCAL_OPTIONS # allow functions to have local options
-setopt LOCAL_TRAPS # allow functions to have local traps
-setopt HIST_VERIFY
-setopt SHARE_HISTORY # share history between sessions ???
-setopt EXTENDED_HISTORY # add timestamps to history
+setopt LOCAL_OPTIONS        # allow functions to have local options
+setopt LOCAL_TRAPS          # allow functions to have local traps
+setopt SHARE_HISTORY        # share history across terminal tabs
+setopt EXTENDED_HISTORY     # add timestamps to history
 setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD
@@ -45,3 +47,10 @@ export SAM_CLI_TELEMETRY=0
 export PYTORCH_ENABLE_MPS_FALLBACK=1
 export HF_HOME=/Volumes/NON_T7S_1TB/diffusers
 export OLLAMA_MODELS=/Volumes/NON_T7S_1TB/ollama-models
+
+# turbo
+export TURBO_TELEMETRY_DISABLED=1
+export TURBO_NO_UPDATE_NOTIFIER=1
+
+# skip compinit security check (speeds up startup)
+ZSH_DISABLE_COMPFIX=true
