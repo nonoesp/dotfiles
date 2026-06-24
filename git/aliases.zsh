@@ -23,3 +23,6 @@ alias gb='git branch'
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 alias gm='git pull origin main'
+
+# Google Chrome
+alias chrome='function _g(){ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app="$1"; }; _g'
