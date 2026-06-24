@@ -36,3 +36,5 @@ alias t="sh $SCRIPTS/macos-theme-toggle.sh"
 
 # HuggingFace CLI
 alias hf="huggingface-cli"
+alias typing="typin"
+alias g='function _g(){ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app="https://$1"; }; _g'
