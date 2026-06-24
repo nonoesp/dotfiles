@@ -3,16 +3,17 @@
 # Smart cd.
 # Overrides cd to enter directories of files as well.
 # https://stackoverflow.com/a/36957743/2636350
+#
+# Only "smart" in interactive shells. In non-interactive shells (scripts and
+# Claude Code's snapshot shell) behave exactly like the builtin, so a bad path
+# fails loudly instead of silently cd-ing to its parent directory.
 
-function cd() {
-    if [ $# -eq 0 ] ; then
-        # no arguments
-        builtin cd
-    elif [ -d $1 ] ; then
-        # argument is a directory
-        builtin cd "$1"
-    else
-        # argument is not a directory
-        builtin cd "$(dirname $1)"
-    fi
-}
+if [[ ! -o interactive ]]; then
+    builtin cd "$@"
+elif [ $# -eq 0 ]; then
+    builtin cd
+elif [ -d "$1" ]; then
+    builtin cd "$1"
+else
+    builtin cd "$(dirname "$1")"
+fi
