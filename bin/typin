@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+speed=1
+delay=0
+
+normalize_delay() {
+  local raw="$1"
+
+  if [[ "$raw" =~ ^[0-9]+([.][0-9]+)?ms$ ]]; then
+    local ms_value="${raw%ms}"
+    awk -v v="$ms_value" 'BEGIN { printf "%.6f", v / 1000 }'
+    return
+  fi
+
+  if [[ "$raw" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
+    echo "$raw"
+    return
+  fi
+
+  echo "Invalid delay: $raw. Use seconds (e.g. 0.5) or milliseconds with ms (e.g. 250ms)." 1>&2
+  exit 1
+}
+
+normalize_speed() {
+  local raw="$1"
+
+  if [[ "$raw" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
+    if awk -v v="$raw" 'BEGIN { exit !(v > 0) }'; then
+      echo "$raw"
+      return
+    fi
+  fi
+
+  echo "Invalid speed: $raw. Use a positive multiplier (e.g. 0.5, 1, 2)." 1>&2
+  exit 1
+}
+
+if [ "$#" -eq 0 ]; then
+  echo 'Usage: typin [-s|--speed multiplier] [-d|--delay duration] "text to type"' 1>&2
+  exit 1
+fi
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    -s|--speed)
+      if [ "$#" -lt 2 ]; then
+        echo "Missing value for $1" 1>&2
+        exit 1
+      fi
+      speed="$(normalize_speed "$2")"
+      shift 2
+      ;;
+    -d|--delay)
+      if [ "$#" -lt 2 ]; then
+        echo "Missing value for $1" 1>&2
+        exit 1
+      fi
+      delay="$(normalize_delay "$2")"
+      shift 2
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -*)
+      echo "Unknown option: $1" 1>&2
+      echo 'Usage: typin [-s|--speed multiplier] [-d|--delay duration] "text to type"' 1>&2
+      exit 1
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+if [ "$#" -eq 0 ]; then
+  echo 'Usage: typin [-s|--speed multiplier] [-d|--delay duration] "text to type"' 1>&2
+  exit 1
+fi
+
+text="$*"
+base_sleep=0.03
+char_delay="$(awk -v base="$base_sleep" -v s="$speed" 'BEGIN { printf "%.6f", base / s }')"
+
+type_text() {
+  local input="$1"
+  local per_char_delay="$2"
+  local start_delay="$3"
+
+  osascript - "$input" "$per_char_delay" "$start_delay" <<'APPLESCRIPT'
+on run argv
+  set textToType to item 1 of argv
+  set perCharDelay to (item 2 of argv) as real
+  set startDelay to (item 3 of argv) as real
+
+  if startDelay > 0 then
+    delay startDelay
+  end if
+
+  tell application "System Events"
+    repeat with c in characters of textToType
+      keystroke (contents of c)
+      if perCharDelay > 0 then
+        delay perCharDelay
+      end if
+    end repeat
+  end tell
+end run
+APPLESCRIPT
+}
+
+type_text "$text" "$char_delay" "$delay"

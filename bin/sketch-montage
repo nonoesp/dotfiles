@@ -3,8 +3,8 @@
 # Downloads sketch.nono.ma drawings and makes a montage.
 
 # Config.
-DOWNLOAD_SIZE=512
-GEO_SIZE=128
+DOWNLOAD_SIZE=256
+GEO_SIZE=256
 GEO_SPACING=12
 IMAGE_PADDING=256
 
@@ -15,7 +15,7 @@ DOWNLOAD_PATH=~/Desktop
 
 # Download.
 echo › Downloading...
-ts-node ~/repos/github.com/nonoesp/live@main/0035/sketch-downloader/download.ts --size $DOWNLOAD_SIZE
+# ts-node ~/repos/github.com/nonoesp/live@main/0035/sketch-downloader/download.ts --size $DOWNLOAD_SIZE
 
 # Montage.
 echo › Montage...

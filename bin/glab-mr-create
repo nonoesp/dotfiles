@@ -1,0 +1,137 @@
+#!/bin/sh
+#
+# Create a GitLab merge request in any repository via the REST API.
+# Nono Martínez Alonso
+#
+# `glab mr create -R OWNER/REPO` mixes in the current directory's git state
+# (it treats the cwd branch as the MR source), so creating an MR in a repo
+# other than the one you are standing in fails with "Source project is not a
+# fork". This wrapper posts straight to the REST API with the project pinned,
+# so it works regardless of the current directory.
+#
+# Usage
+#
+#   glab-mr-create -R OWNER/REPO -s SOURCE_BRANCH -t TITLE [options]
+#
+# Required
+#
+#   -R  Repository as OWNER/REPO or GROUP/SUBGROUP/REPO.
+#   -s  Source branch.
+#   -t  Merge request title.
+#
+# Options
+#
+#   -b  Target branch (default: main).
+#   -d  Description text.
+#   -D  Read description from a file (overrides -d).
+#   -l  Comma-separated labels.
+#   -a  Assignee username (resolved to an id via the API).
+#   -r  Comma-separated reviewer usernames (resolved to ids).
+#   --draft    Mark the merge request as a draft.
+#   --dry-run  Print the glab api call instead of running it.
+#
+# Examples
+#
+#   glab-mr-create -R ambr1/ml/agents-platform -s genui/frontend-tool-flat-args \
+#     -t "Teach A2UI skill to flatten args" -l "Project::AI_Agents_Platform" -a nono-motif
+#
+
+usage() {
+  sed -n '2,40p' "$0" | sed 's/^#\{0,1\} \{0,1\}//'
+}
+
+TARGET="main"
+DESC=""
+LABELS=""
+ASSIGNEE=""
+REVIEWERS=""
+DRAFT=""
+DRY_RUN=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -R) REPO=$2; shift 2 ;;
+    -s) SOURCE=$2; shift 2 ;;
+    -t) TITLE=$2; shift 2 ;;
+    -b) TARGET=$2; shift 2 ;;
+    -d) DESC=$2; shift 2 ;;
+    -D) DESC=$(cat "$2"); shift 2 ;;
+    -l) LABELS=$2; shift 2 ;;
+    -a) ASSIGNEE=$2; shift 2 ;;
+    -r) REVIEWERS=$2; shift 2 ;;
+    --draft) DRAFT=1; shift ;;
+    --dry-run) DRY_RUN=1; shift ;;
+    -h|--help) usage; exit 0 ;;
+    *) echo "Unknown option: $1" >&2; usage; exit 1 ;;
+  esac
+done
+
+if [ -z "$REPO" ] || [ -z "$SOURCE" ] || [ -z "$TITLE" ]; then
+  echo "Error: -R, -s, and -t are required." >&2
+  usage
+  exit 1
+fi
+
+# GitLab marks a draft by a "Draft: " title prefix; there is no create field.
+if [ -n "$DRAFT" ]; then
+  TITLE="Draft: $TITLE"
+fi
+
+# URL-encode the project path so it is pinned regardless of the cwd repo.
+ENCODED_REPO=${REPO//\//%2F}
+
+# Resolve an assignee username to a numeric id.
+ASSIGNEE_ID=""
+if [ -n "$ASSIGNEE" ]; then
+  ASSIGNEE_ID=$(glab api "users?username=$ASSIGNEE" | jq -r '.[0].id // empty')
+  if [ -z "$ASSIGNEE_ID" ]; then
+    echo "Error: could not resolve assignee username '$ASSIGNEE'." >&2
+    exit 1
+  fi
+fi
+
+# Resolve a comma-separated list of reviewer usernames to numeric ids.
+REVIEWER_IDS=""
+if [ -n "$REVIEWERS" ]; then
+  OLD_IFS=$IFS
+  IFS=,
+  for username in $REVIEWERS; do
+    id=$(glab api "users?username=$username" | jq -r '.[0].id // empty')
+    if [ -z "$id" ]; then
+      echo "Error: could not resolve reviewer username '$username'." >&2
+      exit 1
+    fi
+    REVIEWER_IDS="$REVIEWER_IDS $id"
+  done
+  IFS=$OLD_IFS
+fi
+
+# Build the glab api call in positional params so values with spaces are safe.
+set -- "projects/$ENCODED_REPO/merge_requests" --method POST \
+  --raw-field "source_branch=$SOURCE" \
+  --raw-field "target_branch=$TARGET" \
+  --raw-field "title=$TITLE"
+
+[ -n "$DESC" ] && set -- "$@" --raw-field "description=$DESC"
+[ -n "$LABELS" ] && set -- "$@" --raw-field "labels=$LABELS"
+[ -n "$ASSIGNEE_ID" ] && set -- "$@" --field "assignee_id=$ASSIGNEE_ID"
+for id in $REVIEWER_IDS; do
+  set -- "$@" --raw-field "reviewer_ids[]=$id"
+done
+
+if [ -n "$DRY_RUN" ]; then
+  printf 'glab api'
+  for arg in "$@"; do
+    printf ' %s' "$arg"
+  done
+  printf '\n'
+  exit 0
+fi
+
+RESPONSE=$(glab api "$@")
+STATUS=$?
+if [ $STATUS -ne 0 ]; then
+  exit $STATUS
+fi
+
+echo "$RESPONSE" | jq -r '.web_url // .'
