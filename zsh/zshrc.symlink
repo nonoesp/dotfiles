@@ -1,3 +1,7 @@
+#start_time=$(date +%s)
+# Profiling start
+#zmodload zsh/zprof
+
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 export PATH="/Users/nono/.composer/vendor/bin:$PATH"
 
@@ -87,5 +91,19 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Node Version Manager
-export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix nvm)/nvm.sh"
+
+export EDITOR="cursor"
+
+# Profiling end
+#zprof
+
+#end_time=$(date +%s)
+#elapsed=$((end_time - start_time))
+#
+#echo "Elapsed time: $elapsed seconds"
+
+eval "$(/Users/nono/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
+
+unalias builtin 2>/dev/null
+unfunction builtin 2>/dev/null
